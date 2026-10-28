@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Engineering Lab 02 - Safoora</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link"> Skip to main content </a>
+
+    <header>
+      <h1 id="greeting">Welcome to Safoora's Web Engineering Page</h1>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li>
+            <a href="#office-hours">My Study Schedule</a>
+          </li>
+          <li>
+            <a href="#feedback">Contact Me</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section id="office-hours">
+        <h2>My Study Schedule</h2>
+
+        <p>
+          Hello! I am Safoora, a BS Artificial Intelligence student at Sir Syed
+          CASE Institute of Technology, Islamabad.
+        </p>
+
+        <figure>
+          <svg
+            width="80"
+            height="80"
+            viewBox="0 0 80 80"
+            role="img"
+            aria-labelledby="calendar-title"
+          >
+            <title id="calendar-title">Study schedule calendar icon</title>
+            <rect
+              x="10"
+              y="15"
+              width="60"
+              height="55"
+              rx="5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="4"
+            />
+            <line
+              x1="10"
+              y1="30"
+              x2="70"
+              y2="30"
+              stroke="currentColor"
+              stroke-width="4"
+            />
+            <line
+              x1="25"
+              y1="10"
+              x2="25"
+              y2="22"
+              stroke="currentColor"
+              stroke-width="4"
+            />
+            <line
+              x1="55"
+              y1="10"
+              x2="55"
+              y2="22"
+              stroke="currentColor"
+              stroke-width="4"
+            />
+            <circle cx="30" cy="45" r="3" fill="currentColor" />
+            <circle cx="50" cy="45" r="3" fill="currentColor" />
+            <circle cx="30" cy="58" r="3" fill="currentColor" />
+            <circle cx="50" cy="58" r="3" fill="currentColor" />
+          </svg>
+          <figcaption>My Weekly Study Plan</figcaption>
+        </figure>
+
+        <table>
+          <caption>
+            My Weekly Study Schedule
+          </caption>
+
+          <thead>
+            <tr>
+              <th scope="col">Day</th>
+              <th scope="col">Subject</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th scope="row">Monday</th>
+              <td>Natural Language Processing (NLP)</td>
+            </tr>
+            <tr>
+              <th scope="row">Wednesday</th>
+              <td>Data Mining</td>
+            </tr>
+            <tr>
+              <th scope="row">Friday</th>
+              <td>Computer Vision</td>
+            </tr>
+            <tr>
+              <th scope="row">Saturday</th>
+              <td>Web Engineering</td>
+            </tr>
+            <tr>
+              <th scope="row">Sunday</th>
+              <td>Entrepreneurship</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <svg
+        class="section-divider"
+        viewBox="0 0 800 20"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <line
+          x1="0"
+          y1="10"
+          x2="800"
+          y2="10"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+        <circle cx="400" cy="10" r="6" fill="currentColor" />
+      </svg>
+
+      <section id="feedback">
+        <h2>Contact Me</h2>
+
+        <p>
+          Have a question or want to discuss Artificial Intelligence and Web
+          Development? Send me a message.
+        </p>
+
+        <form action="#" method="post">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              autocomplete="name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              aria-describedby="email-hint"
+              required
+            />
+            <small id="email-hint"> Please enter a valid email address. </small>
+          </div>
+
+          <fieldset>
+            <legend>Message Topic</legend>
+
+            <div>
+              <input
+                type="radio"
+                id="ai"
+                name="topic"
+                value="artificial-intelligence"
+                required
+              />
+              <label for="ai">Artificial Intelligence</label>
+            </div>
+
+            <div>
+              <input
+                type="radio"
+                id="web"
+                name="topic"
+                value="web-development"
+              />
+              <label for="web">Web Development</label>
+            </div>
+
+            <div>
+              <input
+                type="radio"
+                id="education"
+                name="topic"
+                value="education"
+              />
+              <label for="education">Education</label>
+            </div>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <address>
+        Safoora<br />
+        BS Artificial Intelligence Student<br />
+        Sir Syed CASE Institute of Technology<br />
+        Islamabad, Pakistan
+      </address>
+
+      <p>&copy; 2026 Safoora. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,388 @@
+@layer reset, base, components, utilities;
+
+/* ===== Reset ===== */
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body,
+  h1,
+  h2,
+  p,
+  figure {
+    margin: 0;
+  }
+}
+
+/* ===== Base Styles ===== */
+@layer base {
+  :root {
+    color-scheme: light;
+
+    --space: 1rem;
+    --color-bg: #ffffff;
+    --color-text: #202938;
+    --color-muted: #596579;
+    --color-border: #d8dee8;
+    --color-accent: #2257a5;
+    --color-accent-contrast: #ffffff;
+    --color-soft: #eef4ff;
+    --color-heading: #183b70;
+    --color-hover: #174580;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background: #f0f4fa;
+    padding: 1.25rem;
+  }
+
+  a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  button,
+  input,
+  textarea {
+    font: inherit;
+  }
+
+  button {
+    border: 1px solid var(--color-accent);
+    background: var(--color-accent);
+    color: var(--color-accent-contrast);
+    border-radius: 0.45rem;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  button:hover {
+    background: var(--color-hover);
+    transform: translateY(-1px);
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 3px solid #f0ad4e;
+    outline-offset: 3px;
+  }
+
+  input:not([type="radio"]),
+  textarea {
+    display: block;
+    inline-size: 100%;
+    min-width: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 0.4rem;
+    padding: 0.65rem;
+    margin-top: 0.3rem;
+    background: #fff;
+    color: var(--color-text);
+  }
+
+  input:not([type="radio"]):focus,
+  textarea:focus {
+    border-color: var(--color-accent);
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  fieldset {
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    padding: 0.9rem;
+  }
+
+  legend {
+    font-weight: 600;
+    padding-inline: 0.35rem;
+  }
+
+  label {
+    display: block;
+    font-weight: 500;
+  }
+
+  h1,
+  h2 {
+    line-height: 1.25;
+    color: var(--color-heading);
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    letter-spacing: -0.04em;
+  }
+
+  h2 {
+    font-size: 1.45rem;
+    margin-bottom: 0.75rem;
+  }
+
+  small {
+    display: block;
+    color: var(--color-muted);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+}
+
+/* ===== Page Components ===== */
+@layer components {
+  .page {
+    max-width: 1050px;
+    margin-inline: auto;
+    background: var(--color-bg);
+    padding: clamp(1rem, 3vw, 2rem);
+    border: 1px solid var(--color-border);
+    border-radius: 0.8rem;
+    box-shadow: 0 8px 28px rgba(32, 41, 56, 0.07);
+  }
+
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space);
+    padding-block-end: var(--space);
+    border-block-end: 1px solid var(--color-border);
+  }
+
+  nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav a {
+    font-weight: 600;
+    padding-block: 0.35rem;
+  }
+
+  nav a:hover {
+    color: var(--color-hover);
+  }
+
+  figure {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--color-soft);
+    border: 1px solid #dce8fb;
+    border-radius: 0.6rem;
+  }
+
+  figure svg {
+    flex-shrink: 0;
+    color: var(--color-accent);
+  }
+
+  figcaption {
+    font-weight: 600;
+  }
+
+  main {
+    display: grid;
+    gap: 2rem;
+    padding-block: 1.5rem;
+  }
+
+  section {
+    min-width: 0;
+  }
+
+  #schedule {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space);
+    align-items: start;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+  }
+
+  caption {
+    text-align: left;
+    font-weight: 700;
+    padding: 0.75rem;
+    color: var(--color-heading);
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  thead {
+    background: #edf2f8;
+  }
+
+  thead th {
+    color: var(--color-heading);
+    font-weight: 700;
+  }
+
+  tbody tr:nth-child(even) {
+    background: #f8faff;
+  }
+
+  tbody tr:hover {
+    background: #eef4ff;
+  }
+
+  tr.selected th,
+  tr.selected td {
+    background: #dce9ff;
+  }
+
+  tr.selected button {
+    background: #184b32;
+    border-color: #184b32;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem var(--space);
+    padding: 1.25rem;
+    background: #f8faff;
+    border: 1px solid var(--color-border);
+    border-radius: 0.65rem;
+  }
+
+  form > div {
+    min-width: 0;
+  }
+
+  form button {
+    justify-self: start;
+    align-self: start;
+  }
+
+  form fieldset {
+    min-width: 0;
+  }
+
+  form fieldset label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-inline-end: 1rem;
+    font-weight: 400;
+  }
+
+  form input[type="radio"] {
+    accent-color: var(--color-accent);
+  }
+
+  .text-muted {
+    color: var(--color-muted);
+    font-size: 0.94rem;
+  }
+
+  footer {
+    border-block-start: 1px solid var(--color-border);
+    padding-block-start: 1rem;
+    color: var(--color-muted);
+    font-size: 0.94rem;
+  }
+
+  footer address {
+    font-style: normal;
+  }
+}
+
+/* ===== Utility Classes ===== */
+@layer utilities {
+  .span-all {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 40rem) {
+  body {
+    padding: 0.5rem;
+  }
+
+  .page {
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  #schedule,
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  .span-all {
+    grid-column: 1;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+  }
+
+  .table-wrap {
+    max-width: 100%;
+  }
+
+  table {
+    min-width: 540px;
+  }
+
+  figure {
+    align-items: flex-start;
+  }
+
+  form {
+    padding: 1rem;
+  }
+}
